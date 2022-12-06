@@ -10,7 +10,7 @@ public class Elf
         this.sleigh = sleigh;
     }
 
-    public void receivePresent(String present) throws InterruptedException
+    public void receivePresent(Present present) throws InterruptedException
     {
         TimeUnit.MILLISECONDS.sleep(150);
         System.out.println(LocalDateTime.now());

@@ -6,7 +6,7 @@ public class ToyMachine
         this.mrsClaus = mrsClaus;
     }
 
-    public void givePresentToMrsClaus(String toy){
-        mrsClaus.receivePresent(toy);
+    public void givePresentToMrsClaus(Present present){
+        mrsClaus.receivePresent(present);
     }
 }

@@ -11,26 +11,26 @@ public class MrsClaus
     private ExecutorService executorService;
 
 
-    public MrsClaus(int numberOfElfs, Sleigh sleigh)
+    public MrsClaus(int numberOfElves, Sleigh sleigh)
     {
-        executorService = Executors.newFixedThreadPool(numberOfElfs);
+        executorService = Executors.newFixedThreadPool(numberOfElves);
         this.sleigh = sleigh;
 
     }
-    public void receivePresent(String toy)
+    public void receivePresent(Present present)
     {
         Runnable task = () -> {
             Elf elf = new Elf(sleigh);
             try
             {
-                elf.receivePresent(toy);
+                elf.receivePresent(present);
             }
             catch (InterruptedException e)
             {
                 throw new RuntimeException(e);
             }
         };
-        executorService.execute(task);
+        executorService.submit(task);
 
     }
 }
